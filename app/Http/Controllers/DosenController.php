@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\dosen;
 
 class DosenController extends Controller
 {
@@ -11,7 +12,10 @@ class DosenController extends Controller
      */
     public function index()
     {
-        return view('dosen');
+        $dosen = dosen::all();
+        return view('dosen', [
+            'dosen' => $dosen
+        ]);
     }
 
     /**
